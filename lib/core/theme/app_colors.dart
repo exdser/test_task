@@ -5,5 +5,5 @@ abstract class AppColors {
   static Color enableButtonColor = Color(0xffBFA4A4);
   static Color baseLogoColor = Color(0xff929292);
   static Color onTapFirstPartLogoColor = Color(0xff040303);
-  static Color onTapSecondLogoColor = Color(0xff3F2626);
+  static Color onTapSecondPartLogoColor = Color(0xff3F2626);
 }

@@ -1,67 +1,31 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:test_task/core/theme/app_colors.dart';
 import 'package:test_task/shared/widgets/custom_logo.dart';
+import 'package:test_task/shared/widgets/nav_bar.dart';
 
 @RoutePage()
-class PageOneScreen extends StatefulWidget {
-  const PageOneScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<PageOneScreen> createState() => _PageOneScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _PageOneScreenState extends State<PageOneScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: .end,
+      body: Stack(
         children: [
-          CustomLogoWidget(),
-          Row(
-            mainAxisAlignment: .end,
-            children: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.enableButtonColor,
-                  foregroundColor: Colors.black,
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                  textStyle: TextStyle(
-                    fontSize: 24,
-                    fontWeight: .w400,
-                    fontFamily: 'Inter',
-                  ),
-                  shape: RoundedRectangleBorder(),
-                  fixedSize: Size(150, 75),
-                ),
-                onPressed: () {},
-                child: Text('page 1'),
-              ),
-              SizedBox(width: 10),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.disableButtonColor,
-                  foregroundColor: Colors.black,
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                  textStyle: TextStyle(
-                    fontSize: 24,
-                    fontWeight: .w400,
-                    fontFamily: 'Inter',
-                  ),
-                  shape: RoundedRectangleBorder(),
-                  fixedSize: Size(150, 75),
-                ),
-                onPressed: () {
-                  
-                },
-                child: Text('page 2'),
-              ),
+          Center(
+            child: CustomLogoWidget()
+            ),
+            const Align(
+              alignment: .bottomCenter,
+              child: CustomNavBar(activePage: 'page 1'),
+            )
             ],
-          ),
-          SizedBox(height: 10),
-        ],
-      ),
+            ),
     );
   }
 }
