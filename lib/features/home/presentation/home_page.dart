@@ -25,8 +25,8 @@ class _HomeScreenState extends State<HomeScreen> {
               child: BlocBuilder<HomeBloc, HomeState>(
                 builder: (context, state) {
                   return CustomLogoWidget(
-                    svgColorPartOne: state.logoColorPartOne,
-                    svgColorPartTwo: state.logoColorPartTwo,
+                    logoColorPartOne: state.logoColorPartOne,
+                    logoColorPartTwo: state.logoColorPartTwo,
                     onTap: () =>
                         context.read<HomeBloc>().add(ToggleLogoColor()),
                   );
