@@ -19,19 +19,29 @@ class CounterScreen extends StatelessWidget {
             Center(
               child: BlocBuilder<CounterBloc, CounterState>(
                 builder: (context, state) {
-                  return Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        'counter: ${state.value}',
-                        style: const TextStyle(fontSize: 24, fontWeight: .bold),
+                  return Center(
+                    child: SizedBox(
+                      height: 200,
+                      width: 120,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            top: 0,
+                            child: Text(
+                              'counter: ${state.value}',
+                              style: const TextStyle(fontSize: 20, fontWeight: .bold),
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 43,
+                            child: CustomLogoWidget(
+                              onTap: () =>
+                                  context.read<CounterBloc>().add(IncrementCount()),
+                            ),
+                          ),
+                        ],
                       ),
-                      const SizedBox(height: 20),
-                      CustomLogoWidget(
-                        onTap: () =>
-                            context.read<CounterBloc>().add(IncrementCount()),
-                      ),
-                    ],
+                    ),
                   );
                 },
               ),

@@ -11,36 +11,39 @@ class CustomLogoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      borderRadius: BorderRadius.circular(75),
       onTap: onTap,
       child: Padding(
         padding: EdgeInsets.all(5.0),
-        child: Stack(
-          children: [
-            Positioned(
-              left: 150,
-              top: 348,
-              child: SvgPicture.asset(
-                'assets/svg/half_down.svg',
-                width: 80,
-                height: 100,
-                colorFilter: logoColorPartOne != null
-                    ? ColorFilter.mode(logoColorPartOne!, BlendMode.srcIn)
-                    : null,
+        child: SizedBox(
+          height: 100,
+          width: 105,
+          child: Stack(
+            children: [
+              Positioned(
+                left: 0,
+                child: SvgPicture.asset(
+                  'assets/svg/half_down.svg',
+                  width: 80,
+                  height: 100,
+                  colorFilter: logoColorPartOne != null
+                      ? ColorFilter.mode(logoColorPartOne!, BlendMode.srcIn)
+                      : null,
+                ),
               ),
-            ),
-            Positioned(
-              right: 145,
-              top: 350,
-              child: SvgPicture.asset(
-                'assets/svg/half_up.svg',
-                width: 80,
-                height: 100,
-                colorFilter: logoColorPartTwo != null
-                    ? ColorFilter.mode(logoColorPartTwo!, BlendMode.srcIn)
-                    : null,
+              Positioned(
+                right: 0,
+                child: SvgPicture.asset(
+                  'assets/svg/half_up.svg',
+                  width: 80,
+                  height: 100,
+                  colorFilter: logoColorPartTwo != null
+                      ? ColorFilter.mode(logoColorPartTwo!, BlendMode.srcIn)
+                      : null,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
