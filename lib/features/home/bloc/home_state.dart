@@ -1,8 +1,9 @@
 part of 'home_bloc.dart';
 
 class HomeState {
-  final Color logoColor;
+  final Color logoColorPartOne;
+  final Color logoColorPartTwo;
 
-  HomeState({required this.logoColor});
+  HomeState({required this.logoColorPartOne, required this.logoColorPartTwo});
 
 }
