@@ -27,8 +27,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   return CustomLogoWidget(
                     logoColorPartOne: state.logoColorPartOne,
                     logoColorPartTwo: state.logoColorPartTwo,
-                    onTap: () =>
-                        context.read<HomeBloc>().add(ToggleLogoColor()),
+                    onTapToFirstPart: () =>
+                        context.read<HomeBloc>().add(ToggleLogoColor(partIndex: 1)),
+                    onTapToSecondPart: () =>
+                        context.read<HomeBloc>().add(ToggleLogoColor(partIndex: 2)),
                   );
                 },
               ),

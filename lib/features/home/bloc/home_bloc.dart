@@ -9,9 +9,16 @@ part 'home_state.dart';
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc() : super(HomeState(logoColorPartOne: AppColors.baseLogoColor, logoColorPartTwo: AppColors.baseLogoColor )) {
     on<ToggleLogoColor>((event, emit) {
-      final newColorPartOne = state.logoColorPartOne == AppColors.baseLogoColor ? AppColors.onTapFirstPartLogoColor :AppColors.baseLogoColor;
-      final newColorPartTwo = state.logoColorPartTwo == AppColors.baseLogoColor ? AppColors.onTapSecondPartLogoColor :AppColors.baseLogoColor;
-      emit(HomeState(logoColorPartOne: newColorPartOne, logoColorPartTwo: newColorPartTwo));
+      if(event.partIndex == 1){
+        final newColor = state.logoColorPartOne == AppColors.baseLogoColor ? AppColors.onTapFirstPartLogoColor :AppColors.baseLogoColor;
+        emit(HomeState(logoColorPartOne: newColor, logoColorPartTwo: state.logoColorPartTwo));
+      }else{
+        final newColor = state.logoColorPartTwo == AppColors.baseLogoColor ? AppColors.onTapSecondPartLogoColor :AppColors.baseLogoColor;
+        emit(HomeState(logoColorPartOne: state.logoColorPartOne, logoColorPartTwo: newColor));
+      }
+      
+      
+      
     });
   }
 }

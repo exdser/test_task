@@ -1,6 +1,9 @@
 part of 'home_bloc.dart';
 
+abstract class HomeEvent {}
 
-abstract class HomeEvent{}
+class ToggleLogoColor extends HomeEvent {
+  final int partIndex;
 
-class ToggleLogoColor extends HomeEvent{}
+  ToggleLogoColor({required this.partIndex});
+}

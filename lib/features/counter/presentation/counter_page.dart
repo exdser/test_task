@@ -35,7 +35,9 @@ class CounterScreen extends StatelessWidget {
                           Positioned(
                             bottom: 43,
                             child: CustomLogoWidget(
-                              onTap: () =>
+                              onTapToFirstPart: () =>
+                                  context.read<CounterBloc>().add(IncrementCount()),
+                                  onTapToSecondPart: () =>
                                   context.read<CounterBloc>().add(IncrementCount()),
                             ),
                           ),
