@@ -49,16 +49,7 @@ make gen — запуск генератора кода.
 
 make run — запуск приложения.
 
-📂 Структура папок
-Plaintext
-lib/
-├── core/
-│   └── router/          # Конфигурация AutoRoute
-├── features/
-│   ├── counter/         # Логика и экран счетчика (BLoC + UI)
-│   └── home/            # Логика и экран с логотипом (BLoC + UI)
-└── shared/
-    └── widgets/         # Общие компоненты (NavBar, LogoWidget)
+
 
 Контакты
 
